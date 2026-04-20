@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioSynth — Gerencie estudos clinicos com a precisao que a regulamentacao exige</title>
+  <meta name="description" content="Plataforma de gerenciamento de estudos clinicos da Razor Sistemas. Protocolos, participantes, queries e exportacao SDTM com rastreabilidade completa." />
+  <meta name="theme-color" content="#FAFBFA" />
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Logo como favicon SVG (hexagono + pulso, stroke #86C890) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><path d='M20 3 L34 11 L34 29 L20 37 L6 29 L6 11 Z' fill='none' stroke='%2386C890' stroke-width='2.5' stroke-linejoin='round'/><path d='M10 20 L15 20 L17 14 L20 26 L23 17 L25 20 L30 20' fill='none' stroke='%2386C890' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+</head>
+<body>
+
+  <!-- ====================================================================
+       Navbar
+       ==================================================================== -->
+  <nav class="bio-nav" id="bioNav">
+    <div class="bio-container bio-nav__inner">
+      <a href="#" class="bio-nav__brand" aria-label="BioSynth">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 3 L34 11 L34 29 L20 37 L6 29 L6 11 Z"
+                fill="none" stroke="#86C890" stroke-width="2"
+                stroke-linejoin="round" />
+          <path d="M10 20 L15 20 L17 14 L20 26 L23 17 L25 20 L30 20"
+                fill="none" stroke="#86C890" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="bio-nav__wordmark">BioSynth</span>
+        <span class="bio-nav__parent" aria-hidden="true">por RAZOR</span>
+      </a>
+
+      <div class="bio-nav__links">
+        <a href="#plataforma" class="bio-nav__link">Plataforma</a>
+        <a href="#capacidades" class="bio-nav__link">Capacidades</a>
+        <a href="#compliance" class="bio-nav__link">Compliance</a>
+        <a href="#contato" class="bio-nav__link">Contato</a>
+      </div>
+
+      <div class="bio-nav__actions">
+        <a href="https://biosynth-frontend-production.up.railway.app/login"
+           class="bio-btn-primary"
+           rel="noopener">
+          Entrar
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        <button class="bio-nav__mobile-toggle" id="bioNavToggle" aria-label="Abrir menu" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====================================================================
+       Hero
+       ==================================================================== -->
+  <header class="bio-hero" id="plataforma">
+    <div class="bio-container bio-hero__inner">
+      <div>
+        <span class="bio-badge bio-badge-success bio-hero__eyebrow">
+          <span class="bio-badge-dot"></span>
+          Em desenvolvimento ativo
+        </span>
+
+        <h1 class="bio-display bio-hero__title">
+          Gerencie estudos clinicos com a <em>precisao</em> que a regulamentacao exige.
+        </h1>
+
+        <p class="bio-hero__lede">
+          BioSynth e a plataforma da Razor para protocolos, participantes, CRFs e queries em estudos clinicos. Cada alteracao e rastreavel. Cada exportacao e auditavel.
+        </p>
+
+        <div class="bio-hero__actions">
+          <a href="https://biosynth-frontend-production.up.railway.app/login"
+             class="bio-btn-primary"
+             rel="noopener">
+            Entrar na plataforma
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="#contato" class="bio-btn-secondary">Solicitar demonstracao</a>
+        </div>
+
+        <div class="bio-hero__meta">
+          <div class="bio-hero__meta-item">
+            <span class="bio-hero__meta-value">21 CFR Part 11</span>
+            <span class="bio-hero__meta-label">Assinatura eletronica</span>
+          </div>
+          <div class="bio-hero__meta-item">
+            <span class="bio-hero__meta-value">ICH-GCP</span>
+            <span class="bio-hero__meta-label">Boas praticas clinicas</span>
+          </div>
+          <div class="bio-hero__meta-item">
+            <span class="bio-hero__meta-value">CDISC SDTM</span>
+            <span class="bio-hero__meta-label">Exportacao padronizada</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bio-hero__visual bio-fade-up">
+        <img class="bio-hero__image"
+             src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80"
+             alt="Pesquisadora em laboratorio clinico" />
+        <div class="bio-hero__overlay" aria-hidden="true"></div>
+        <div class="bio-hero__visual-content">
+          <span class="bio-hero__visual-eyebrow">Uso real</span>
+          <p class="bio-hero__visual-caption">
+            Equipes clinicas gerenciando protocolos em ambiente regulado.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====================================================================
+       Capacidades
+       ==================================================================== -->
+  <section class="bio-section bio-capabilities" id="capacidades">
+    <div class="bio-container">
+      <div class="bio-section__head">
+        <span class="bio-label bio-section__eyebrow">Capacidades</span>
+        <h2 class="bio-h1 bio-section__title">
+          O que voce precisa para rodar um estudo clinico do zero ao fechamento.
+        </h2>
+        <p class="bio-section__desc">
+          Cada modulo foi desenhado para equipes clinicas, monitores e estatisticos que precisam de dados confiaveis, historico completo e exportacao padronizada.
+        </p>
+      </div>
+
+      <div class="bio-capabilities__grid">
+
+        <article class="bio-capability bio-fade-up">
+          <div class="bio-capability__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M9 3h6a2 2 0 012 2v2H7V5a2 2 0 012-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+              <path d="M5 7h14v12a2 2 0 01-2 2H7a2 2 0 01-2-2V7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+              <path d="M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="bio-h3 bio-capability__title">Protocolos versionados</h3>
+          <p class="bio-capability__desc">
+            Crie, versione e audite protocolos com historico completo de alteracoes. Cada emenda fica registrada com autor, data e justificativa.
+          </p>
+        </article>
+
+        <article class="bio-capability bio-fade-up">
+          <div class="bio-capability__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <circle cx="9" cy="8" r="3.5" stroke="currentColor" stroke-width="1.5" />
+              <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              <circle cx="17" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5" />
+              <path d="M14 18c0-2.2 1.8-4 3-4s4 1.8 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="bio-h3 bio-capability__title">Gestao de participantes</h3>
+          <p class="bio-capability__desc">
+            Codigos de participante em formato tecnico, visitas agendadas, consentimento informado e registro de desvios por participante.
+          </p>
+        </article>
+
+        <article class="bio-capability bio-fade-up">
+          <div class="bio-capability__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5" />
+              <path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="bio-h3 bio-capability__title">CRFs estruturados</h3>
+          <p class="bio-capability__desc">
+            Formularios eletronicos configuraveis por visita, com validacoes logicas e tipos de dado coerentes com o protocolo.
+          </p>
+        </article>
+
+        <article class="bio-capability bio-fade-up">
+          <div class="bio-capability__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M21 15a2 2 0 01-2 2H8l-5 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+              <path d="M9 9h6M9 13h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="bio-h3 bio-capability__title">Queries e esclarecimentos</h3>
+          <p class="bio-capability__desc">
+            Monitores abrem queries diretamente no campo do CRF. Centros respondem. O historico fica vinculado ao registro.
+          </p>
+        </article>
+
+        <article class="bio-capability bio-fade-up">
+          <div class="bio-capability__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </div>
+          <h3 class="bio-h3 bio-capability__title">Trilha de auditoria</h3>
+          <p class="bio-capability__desc">
+            Toda acao e registrada com usuario, timestamp e valor anterior. Pronto para inspecao e compativel com 21 CFR Part 11.
+          </p>
+        </article>
+
+        <article class="bio-capability bio-fade-up">
+          <div class="bio-capability__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 4v12M6 10l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4 20h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="bio-h3 bio-capability__title">Exportacao SDTM</h3>
+          <p class="bio-capability__desc">
+            Exporte dados no formato CDISC SDTM diretamente. Sem etapas intermediarias, sem reconciliacao manual, sem surpresas.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       Editorial
+       ==================================================================== -->
+  <section class="bio-section bio-editorial">
+    <div class="bio-container bio-editorial__inner">
+      <div class="bio-editorial__image bio-fade-up">
+        <img src="https://images.unsplash.com/photo-1581093458791-9d42e3ec2b8e?auto=format&fit=crop&w=1200&q=80"
+             alt="Pesquisa cientifica em laboratorio moderno" />
+      </div>
+
+      <div class="bio-editorial__body">
+        <span class="bio-label bio-section__eyebrow">Filosofia</span>
+        <h2 class="bio-h1" style="margin-bottom: var(--bio-space-lg);">
+          Rigor cientifico e cuidado com a vida.
+        </h2>
+        <p>
+          O BioSynth nasceu de uma observacao simples: estudos clinicos geram dados que decidem aprovacao de medicamentos, seguranca de participantes e o rumo de tratamentos. Dados nesse contexto nao podem ser aproximados.
+        </p>
+        <p>
+          Construimos uma plataforma que trata cada campo, cada edicao e cada exportacao como se fossem inspecionadas amanha — porque podem ser.
+        </p>
+
+        <blockquote class="bio-editorial__quote">
+          Precisao e a diferenca entre um dado util e uma suposicao.
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       Compliance
+       ==================================================================== -->
+  <section class="bio-section bio-compliance" id="compliance">
+    <div class="bio-container bio-compliance__grid">
+
+      <div>
+        <span class="bio-label bio-section__eyebrow">Conformidade regulatoria</span>
+        <h2 class="bio-h1 bio-section__title">
+          Construido para os padroes que auditores cobram.
+        </h2>
+        <p class="bio-section__desc">
+          Cada decisao de engenharia do BioSynth passa por uma verificacao: atende aos requisitos de estudos clinicos internacionais? Se nao, nao entra.
+        </p>
+
+        <div class="bio-compliance__tags" aria-label="Padroes regulatorios suportados">
+          <span class="bio-compliance__tag">21 CFR Part 11</span>
+          <span class="bio-compliance__tag">ICH-GCP</span>
+          <span class="bio-compliance__tag">LGPD</span>
+          <span class="bio-compliance__tag">HIPAA</span>
+          <span class="bio-compliance__tag">CDISC SDTM</span>
+        </div>
+      </div>
+
+      <div class="bio-compliance__list">
+
+        <div class="bio-compliance__item bio-fade-up">
+          <div class="bio-compliance__check" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="bio-h3 bio-compliance__item-title">Assinatura eletronica 21 CFR Part 11</h3>
+            <p class="bio-compliance__item-desc">
+              Cada registro critico pode ser assinado eletronicamente com autenticacao, timestamp e significado (autor, aprovador, revisor).
+            </p>
+          </div>
+        </div>
+
+        <div class="bio-compliance__item bio-fade-up">
+          <div class="bio-compliance__check" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="bio-h3 bio-compliance__item-title">Trilha de auditoria completa</h3>
+            <p class="bio-compliance__item-desc">
+              Nenhum dado e apagado. Alteracoes geram novo registro com valor anterior, valor novo, usuario responsavel e motivo.
+            </p>
+          </div>
+        </div>
+
+        <div class="bio-compliance__item bio-fade-up">
+          <div class="bio-compliance__check" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="bio-h3 bio-compliance__item-title">Controle de acesso por perfil</h3>
+            <p class="bio-compliance__item-desc">
+              Perfis distintos para investigador, monitor, coordenador e estatistico. Cada um ve e edita apenas o que o protocolo permite.
+            </p>
+          </div>
+        </div>
+
+        <div class="bio-compliance__item bio-fade-up">
+          <div class="bio-compliance__check" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="bio-h3 bio-compliance__item-title">Dados residentes e protegidos</h3>
+            <p class="bio-compliance__item-desc">
+              Infraestrutura com criptografia em repouso e em transito. Pseudonimizacao de dados pessoais alinhada a LGPD e HIPAA.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       CTA Final
+       ==================================================================== -->
+  <section class="bio-cta" id="contato">
+    <div class="bio-container">
+      <div class="bio-cta__inner">
+        <img class="bio-cta__image"
+             src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1600&q=80"
+             alt="Ambiente laboratorial moderno" />
+        <div class="bio-cta__overlay" aria-hidden="true"></div>
+        <div class="bio-cta__content">
+          <span class="bio-label" style="opacity: 0.85; margin-bottom: var(--bio-space-md); display: inline-block;">
+            Comece agora
+          </span>
+          <h2 class="bio-cta__title">
+            Pronto para rodar seu proximo estudo com trilha de auditoria desde o dia um?
+          </h2>
+          <p class="bio-cta__desc">
+            Se sua equipe ja tem acesso, entre direto na plataforma. Se quer conhecer em uma demonstracao guiada, fale com a gente.
+          </p>
+          <div class="bio-cta__actions">
+            <a href="https://biosynth-frontend-production.up.railway.app/login"
+               class="bio-btn-on-dark"
+               rel="noopener">
+              Entrar na plataforma
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a href="mailto:contato@razor.com.br?subject=Demonstracao%20BioSynth"
+               class="bio-btn-ghost-on-dark">
+              Agendar demonstracao
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       Footer
+       ==================================================================== -->
+  <footer class="bio-footer">
+    <div class="bio-container">
+      <div class="bio-footer__top">
+
+        <div class="bio-footer__brand">
+          <a href="#" class="bio-nav__brand" aria-label="BioSynth">
+            <svg width="28" height="28" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <path d="M20 3 L34 11 L34 29 L20 37 L6 29 L6 11 Z"
+                    fill="none" stroke="#86C890" stroke-width="2"
+                    stroke-linejoin="round" />
+              <path d="M10 20 L15 20 L17 14 L20 26 L23 17 L25 20 L30 20"
+                    fill="none" stroke="#86C890" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="bio-nav__wordmark">BioSynth</span>
+          </a>
+          <p>
+            Plataforma de gerenciamento de estudos clinicos. Protocolos, participantes, queries e exportacao padronizada.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="bio-h3 bio-footer__col-title">Produto</h4>
+          <ul class="bio-footer__list">
+            <li><a href="#capacidades">Capacidades</a></li>
+            <li><a href="#compliance">Compliance</a></li>
+            <li><a href="https://biosynth-frontend-production.up.railway.app/login" rel="noopener">Entrar</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="bio-h3 bio-footer__col-title">Empresa</h4>
+          <ul class="bio-footer__list">
+            <li><a href="https://razor-website-production.up.railway.app" rel="noopener">Razor Sistemas</a></li>
+            <li><a href="mailto:contato@razor.com.br">Contato</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="bio-h3 bio-footer__col-title">Legal</h4>
+          <ul class="bio-footer__list">
+            <li><a href="#">Termos de uso</a></li>
+            <li><a href="#">Politica de privacidade</a></li>
+            <li><a href="#">LGPD</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="bio-footer__bottom">
+        <span class="bio-footer__signature">BioSynth — um produto Razor Sistemas e Tecnologia</span>
+        <span class="bio-footer__copy">&copy; 2026 Razor Sistemas. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
